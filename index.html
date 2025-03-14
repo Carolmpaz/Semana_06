@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Labirinto</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <script src="scenes/MenuScene.js"></script>   
+    <script src="scenes/GameScene.js" ></script>
+    <script src="scenes/GameScene2.js"></script>
+    <script src="scenes/WinScene.js"></script>
+    <script src="scenes/GameOverScene.js"></script>
+
+
+ 
+    
+</head>
+<body>
+    <script type="text/javascript">
+    const config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        physics: { default: 'arcade', arcade: { debug: false } },
+        parent: "game",
+            dom:{
+               createContainer: true,
+            },
+        scene: [MenuScene, GameScene, GameScene2, GameOverScene, WinScene]
+    };
+
+    var game = new Phaser.Game(config);
+    game.scene.start('MenuScene');
+
+    </script>
+    
+</body>
+</html>
